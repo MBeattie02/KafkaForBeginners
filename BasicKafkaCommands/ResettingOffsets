@@ -1,0 +1,20 @@
+#Reset offsets to beginning of each partition
+kafka-console-groups --bootstrap-server localhost:9092 --group my-first-application --reset-offsets --to_earliest
+
+#execute flag is needed
+kafka-console-groups --bootstrap-server localhost:9092 --group my-first-application --reset-offsets --to_earliest --execute
+
+#topic flag also needed
+kafka-console-groups --bootstrap-server localhost:9092 --group my-first-application --reset-offsets --to_earliest --execute --topic first_topic
+
+#Consume from where offsets reset
+kafka-console-groups --bootstrap-server localhost:9092 --group my-first-application
+
+#Describe group again
+kafka-console-groups --bootstrap-server localhost:9092 --describe --group my-first-application
+
+#Shift offsets by 2 forward
+kafka-console-groups --bootstrap-server localhost:9092 --group my-first-application --reset-offsets --shift-by-2 --execute --topic first_topic
+
+#Shif offsets by 2 backwards
+kafka-console-groups --bootstrap-server localhost:9092 --group my-first-application --reset-offsets --shift-by-2 --execute --topic first_topic

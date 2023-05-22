@@ -1,0 +1,18 @@
+Zookeeper-Server-Start /usr/local/etc/kafka/zookeeper.properties
+Kafka-Server-Start /usr/local/etc/kafka/server.properties
+
+Kafka CLI Topics
+
+Create A Topic
+kafka-topics --bootstrap-server localhost:9092 --topic_first --create
+kafka-topics --bootstrap-server localhost:9092 --topic_first --create --partitions 3
+kafka-topics --bootstrap-server localhost:9092 --topic_first --create --partitions 3 --replication-factor 2
+
+List topics
+kafka-topics --bootstrap-server localhost:9092 --list
+
+Describe Topics
+kafka-topics --bootstrap-server localhost:9092 --topic first_topic --describe
+
+Delete a topic
+kafka-topics --bootstrap-server localhost:9092 --topic first_topic --delete

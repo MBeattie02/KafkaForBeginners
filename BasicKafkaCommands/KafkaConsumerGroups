@@ -1,0 +1,17 @@
+#Documentation
+kafka-console-groups --bootstrap-server localhost:9092 --list
+
+#List Consumer Groups
+kafka-console-groups --bootstrap-server localhost:9092 --describe --group my-second-application
+
+#Describe One Specific Group
+kafka-console-groups --bootstrap-server localhost:9092 --describe --group my-second-application
+
+#Describe Another Group
+kafka-console-groups --bootstrap-server localhost:9092 --describe --group my-first-application
+
+#Start A Consumer
+kafka-console-consumer --bootstrap-server localhost:9092 --topic first_topic --group my-first-application
+
+#Describe The Group Now
+kafka-console-groups --bootstrap-server localhost:9092 --describe --group my-first-application

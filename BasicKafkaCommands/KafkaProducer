@@ -1,0 +1,22 @@
+Create Topic First
+
+#Producing
+kafka-console-producer --bootstrap-server localhost:9092 --topic first_topic
+> Hello World
+
+#Producing With Properties
+kafka-console-producer --bootstrap-server localhost:9092 --topic first_topic --producer-property acks=all
+>Learning
+
+#Producing To Non Existing Topic
+kafka-console-producer --bootstrap-server localhost:9092 --topic new_topic
+>Hello World !!
+
+#New Topic Only One Partition
+kafka-console-producer --bootstrap-server localhost:9092 --list
+kafka-console-producer --bootstrap-server localhost:9092 --topic new_topic --describe
+
+#Produce With Keys
+kafka-console-producer --bootstrap-server localhost:9092 --topic first_topic --property parse.key = true --property key.separator = :
+>example key : example value
+>name : Matthew

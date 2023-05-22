@@ -1,0 +1,13 @@
+#Consuming
+kafka-console-consumer --bootstrap-server localhost:9092 --topic first_topic
+
+#Other Terminal
+kafka-console-producer --bootstrap-server localhost:9092 --topic first_topic
+
+#Consuming from beginning
+kafka-console-consumer --bootstrap-server localhost:9092 --topic first_topic --from-beginning
+
+#Display Key, Values and timestamp in consumer
+kafka-console-consumer --bootstrap-server localhost:9092 --topic first_topic
+--formatter kafka.tools.Default.Message.Formatter --property print.timestamp=true --property print.key = true --property
+print.value = true --from-beginning
